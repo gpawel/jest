@@ -1,19 +1,22 @@
 {
-  "name": "jest",
+  "name": "jest_selenium",
   "version": "1.0.0",
   "description": "build selenium based framework using pure typescript, jest and selenium",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start:dev": "nodemon"
   },
   "keywords": [],
   "author": "Pavel Gouchtchine",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.9.1",
+    "jest": "^27.1.1",
     "nodemon": "^2.0.12",
+    "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.3"
   }
 }
