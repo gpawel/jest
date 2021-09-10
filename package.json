@@ -1,0 +1,12 @@
+{
+  "name": "jest",
+  "version": "1.0.0",
+  "description": "build selenium based framework using pure typescript, jest and selenium",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Pavel Gouchtchine",
+  "license": "ISC"
+}
