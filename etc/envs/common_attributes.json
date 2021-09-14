@@ -1,6 +1,6 @@
 {
     "baseUrl":"http://yahoo.com",
     "browser":"Chrome",
-    "userName":"user",
-    "password":"password"
+    "userName":"common user",
+    "password":"common password"
 }
