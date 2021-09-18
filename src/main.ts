@@ -1,6 +1,7 @@
 console.log("Hello World!!")
-import { Context } from './Context/Context'; 
-let con = Context.getContext();
+import { Config } from './config/Config'; 
+let con = Config.getContext();
+con.showOptions();
 //con.showOptions();
 //let opt = con.getOptions();
 //console.log(opt);

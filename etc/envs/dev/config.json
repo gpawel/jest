@@ -2,5 +2,6 @@
     "baseUrl":"http://google.com",
     "browser":"firefox",
     "userName":"user",
-    "password":"password"
+    "password":"password",
+    "dev":"dev env"
 }

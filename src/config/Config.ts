@@ -10,7 +10,7 @@ const optionDefinitions = [
 const commandLineArgs = require('command-line-args')
 
 
-export class Context {
+export class Config {
     static instnce: any;
     timestmp: number;
     options = commandLineArgs(optionDefinitions);
@@ -34,10 +34,10 @@ export class Context {
     };
 
     static getContext() {
-        if (Context.instnce == null) {
-            Context.instnce = new Context();
+        if (Config.instnce == null) {
+            Config.instnce = new Config();
         }
-        return Context.instnce;
+        return Config.instnce;
     }
 
     showOptions() {
@@ -59,11 +59,10 @@ export class Context {
     }
 
 
-    private loadConfsInFolder(folder: string):any {
+    private loadConfsInFolder(folder: string, result:any):any {
         let filesList: string[];
         filesList = [];
         let list = fs.readdirSync(folder);
-        let result = {};
         list.forEach(f => {
             let path = folder + "/" + f;
             if (fs.statSync(path).isFile()) {
@@ -78,11 +77,9 @@ export class Context {
 
     private loadConfig() {
         let envFlolder = this.confRoot + "/" + this.options.environment;
-        let result = this.loadConfsInFolder(this.confRoot);
-        result = this.loadConfsInFolder(envFlolder);
-        result = this.mergeObjects(result, this.options);
-        this.options = result;
-        console.log(this.options);
+        let result = this.loadConfsInFolder(this.confRoot,{});
+        result = this.loadConfsInFolder(envFlolder, result);
+        this.options = this.mergeObjects(result, this.options);
     }
 }
 
