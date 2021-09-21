@@ -5,7 +5,7 @@ const optionDefinitions = [
     { name: 'browser', alias: 'b', type: String },
     { name: 'hub', type: String },
     { name: 'environment', alias: 'e', type: String },
-    { name: 'confroot', alias: 'c', type: String }
+    { name: 'configRoot', alias: 'c', type: String }
 ]
 const commandLineArgs = require('command-line-args')
 
@@ -14,26 +14,26 @@ export class Config {
     static instnce: any;
     timestmp: number;
     options = commandLineArgs(optionDefinitions);
-    confRoot: string;
+    configRoot: string;
 
 
     private constructor() {
         this.timestmp = Date.now();
         if (['dev', 'qa', 'uat'].indexOf(this.options.environment) < 0)
             throw new Error("Please provide environment: dev, qa or uat");
-        if (this.options.confRoot === undefined) {
-            this.confRoot = process.cwd() + "/etc/envs";
+        if (this.options.configRoot === undefined) {
+            this.configRoot = process.cwd() + "/etc/envs";
         }
         else {
-            this.confRoot = this.options.root;
+            this.configRoot = this.options.root;
         }
-        console.log(this.confRoot)
+        console.log(this.configRoot)
         this.loadConfig();
 
 
     };
 
-    static getContext() {
+    static getConfig() {
         if (Config.instnce == null) {
             Config.instnce = new Config();
         }
@@ -76,8 +76,8 @@ export class Config {
     }
 
     private loadConfig() {
-        let envFlolder = this.confRoot + "/" + this.options.environment;
-        let result = this.loadConfsInFolder(this.confRoot,{});
+        let envFlolder = this.configRoot + "/" + this.options.environment;
+        let result = this.loadConfsInFolder(this.configRoot,{});
         result = this.loadConfsInFolder(envFlolder, result);
         this.options = this.mergeObjects(result, this.options);
     }

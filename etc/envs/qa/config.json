@@ -2,5 +2,7 @@
     "browser":"Opera",
     "userName":"qa user",
     "password":"qa password",
-    "qa":"qa environment"
+    "qa":"qa environment",
+    "chrome":"/home/pavel/workspace/SELENIUM/drivers/chrome/chromedriver",
+    "hub":"http://localhost:4444/wd/hub"
 }
