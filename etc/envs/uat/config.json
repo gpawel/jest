@@ -1,7 +1,8 @@
 {
-    "baseUrl":"http://canadiantire.ca",
+    "baseUrl":"http://institutionalclient.sterbc.com",
     "browser":"opera",
-    "userName":"user",
-    "password":"password",
-    "uat":"uat environment"
+    "userName":"client@dummy.com",
+    "password":"Password@111",
+    "uat":"uat environment",
+    "timeOut":10000
 }
