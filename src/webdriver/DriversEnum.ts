@@ -1,6 +1,6 @@
 export enum Drivers {
     chrome="chrome",
     firefox="firefox",
-    ff="ff"
+    ff="ff",
     opera="opera"
 }
